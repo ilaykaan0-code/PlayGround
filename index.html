@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover" />
+  <meta name="theme-color" content="#07111e" />
+  <title>Webslinger: City of Stories</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="game-shell">
+    <canvas id="game" aria-label="Web-slinging city game"></canvas>
+    <div class="vignette"></div>
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">✳</span><div><strong>WEB<span>SLINGER</span></strong><small>CITY OF STORIES</small></div></div>
+      <div class="mission"><span class="live-dot"></span><div><small>NEIGHBORHOOD WATCH</small><strong id="mission-text">Find the signal shards</strong></div></div>
+      <button class="icon-button" id="map-toggle" aria-label="Toggle map" title="Toggle map">⌖</button>
+      <button class="icon-button suit-open" id="suit-open" aria-label="Open suits" title="Suit collection">◈ <span>SUITS</span></button>
+    </header>
+    <section class="left-hud">
+      <div class="stat-card"><span class="eyebrow">SIGNAL SHARDS</span><div class="shard-row"><strong id="shard-count">0</strong><span>/ 8</span><span class="shard-glyph">✦</span></div><div class="progress-track"><i id="progress"></i></div></div>
+      <div class="stat-card compact"><span class="eyebrow">CITY STYLE</span><strong id="style-score">0</strong><small>STYLE POINTS</small></div>
+      <div class="location" id="location">DOWNTOWN · DISTRICT 01</div>
+    </section>
+    <section class="right-hud">
+      <div class="minimap-frame"><canvas id="minimap" width="160" height="160"></canvas><div class="mini-label">CITY RADAR <span>● LIVE</span></div></div>
+      <div class="swing-readout"><span>TRAVERSE SPEED</span><strong id="speed">0 <small>KM/H</small></strong></div>
+    </section>
+    <div class="bottom-hud">
+      <div class="controls-hint desktop-hint"><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd><span>MOVE</span><i></i><kbd>SPACE</kbd><span>WEB SWING</span><i></i><kbd>SHIFT</kbd><span>WEB ZIP</span></div>
+      <div class="controls-hint mobile-hint"><span>DRAG TO MOVE</span><i></i><span>HOLD ◉ TO SWING</span></div>
+      <button class="sound-button" id="sound-toggle" aria-label="Toggle sound">♪ <span>SOUND ON</span></button>
+    </div>
+    <div id="toast" class="toast"></div>
+    <div id="suit-panel" class="overlay hidden">
+      <div class="panel suit-panel">
+        <button class="close-button" id="suit-close" aria-label="Close">×</button>
+        <div class="panel-kicker">YOUR LOOK, YOUR LEGEND</div><h1>Suit collection</h1><p class="panel-subtitle">Every thread tells a story. Pick your next city look.</p>
+        <div class="suit-grid" id="suit-grid"></div>
+        <div class="panel-footer"><span id="suit-status">CLASSIC RED · EQUIPPED</span><span>✦ COLLECT SHARDS TO UNLOCK MORE</span></div>
+      </div>
+    </div>
+    <div id="welcome" class="overlay welcome-overlay">
+      <div class="welcome-card">
+        <div class="welcome-orbit">✳</div><div class="panel-kicker">THE CITY IS YOURS</div><h1>Every block has<br/><em>a story.</em></h1>
+        <p>Swing through the skyline, chase signal shards, and make this city your own.</p>
+        <div class="welcome-controls"><span><kbd>WASD</kbd> MOVE</span><span><kbd>SPACE</kbd> SWING</span><span><kbd>SHIFT</kbd> ZIP</span></div>
+        <button class="primary-button" id="start-game">ENTER THE CITY <span>→</span></button>
+        <small class="touch-note">Touchscreen? Drag to move · hold swing button</small>
+      </div>
+    </div>
+    <div class="touch-controls" aria-label="Touch controls"><div class="joystick" id="joystick"><div class="joy-knob" id="joy-knob"></div></div><button id="swing-touch" class="swing-touch">◉<small>SWING</small></button><button id="zip-touch" class="zip-touch">➤<small>ZIP</small></button></div>
+    <div class="completion hidden" id="completion"><div class="complete-card"><div class="complete-icon">✦</div><div class="panel-kicker">CITY LEGEND</div><h2>Signal restored.</h2><p>You found every shard. The city feels a little safer tonight.</p><button id="keep-playing" class="primary-button">KEEP EXPLORING <span>→</span></button></div></div>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
