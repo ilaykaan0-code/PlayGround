@@ -6,6 +6,7 @@
   <meta name="theme-color" content="#07111e" />
   <title>Webslinger: City of Stories</title>
   <link rel="stylesheet" href="styles.css" />
+  <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js"}}</script>
 </head>
 <body>
   <main id="game-shell">
@@ -52,6 +53,6 @@
     <div class="touch-controls" aria-label="Touch controls"><div class="joystick" id="joystick"><div class="joy-knob" id="joy-knob"></div></div><button id="swing-touch" class="swing-touch">◉<small>SWING</small></button><button id="zip-touch" class="zip-touch">➤<small>ZIP</small></button></div>
     <div class="completion hidden" id="completion"><div class="complete-card"><div class="complete-icon">✦</div><div class="panel-kicker">CITY LEGEND</div><h2>Signal restored.</h2><p>You found every shard. The city feels a little safer tonight.</p><button id="keep-playing" class="primary-button">KEEP EXPLORING <span>→</span></button></div></div>
   </main>
-  <script src="game.js"></script>
+  <script type="module" src="game.js"></script>
 </body>
 </html>
